@@ -1,15 +1,9 @@
 import Button from "./Button";
 import styles, { layout } from "../style";
 import { card } from "../assets";
-import { motion } from "framer-motion";
 const CardDeal = () => (
   <section className={`${layout.section} ${styles.paddingX}`}>
-    <motion.div
-      className={`${layout.sectionInfo}`}
-      transition={{ duration: 1 }}
-      whileInView={{ x: 0 }}
-      initial={{ x: -200 }}
-    >
+    <div className={`${layout.sectionInfo}`}>
       <h2
         className={`${styles.heading2} max-w-[550px] ss:text-start text-center`}
       >
@@ -24,16 +18,11 @@ const CardDeal = () => (
         velit odio!
       </p>
       <Button styles="mt-10" />
-    </motion.div>
-    <motion.div
-      className={`${layout.sectionImg} relative`}
-      transition={{ duration: 1 }}
-      whileInView={{ x: 0 }}
-      initial={{ x: 200 }}
-    >
+    </div>
+    <div className={`${layout.sectionImg} relative`}>
       <img src={card} alt="card" className="" />
       <div className="absolute z-[3] top-0 w-[50%] h-[50%] rounded-full blue__gradient right-0" />
-    </motion.div>
+    </div>
   </section>
 );
 

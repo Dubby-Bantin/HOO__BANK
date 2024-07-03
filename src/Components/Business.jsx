@@ -1,13 +1,9 @@
 import styles, { layout } from "../style";
 import { features } from "../Constants";
 import Button from "./Button";
-import { motion } from "framer-motion";
 
 const FeatureCard = ({ icon, title, content, index, x }) => (
-  <motion.div
-    transition={{ duration: 1 }}
-    whileInView={{ x: 0 }}
-    initial={{ x: x }}
+  <div
     className={`flex flex-row p-6 rounded-[20px]  ${
       index !== features.length - 1 ? "mb-4" : "mb-0"
     } cursor-pointer  mb-feature-card`}
@@ -25,18 +21,13 @@ const FeatureCard = ({ icon, title, content, index, x }) => (
         {content}{" "}
       </p>
     </div>
-  </motion.div>
+  </div>
 );
 
 const Business = () => {
   return (
     <section id="features" className={`${layout.section} ${styles.paddingX} `}>
-      <motion.div
-        className={`${layout.sectionInfo}`}
-        transition={{ duration: 1 }}
-        whileInView={{ x: 0 }}
-        initial={{ x: -200 }}
-      >
+      <div className={`${layout.sectionInfo}`}>
         <h2 className={`${styles.heading2} max-w-[550px]`}>
           You do the business, we’ll handle the money.
         </h2>
@@ -46,7 +37,7 @@ const Business = () => {
           of credit cards on the market.
         </p>
         <Button styles="mt-10" />
-      </motion.div>
+      </div>
 
       <div className={`${layout.sectionImg} flex-col`}>
         {features.map((feature, i) => (

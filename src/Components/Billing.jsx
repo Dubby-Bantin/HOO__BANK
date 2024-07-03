@@ -1,14 +1,10 @@
 import { apple, bill, google } from "../assets";
 import styles, { layout } from "../style";
-import { motion } from "framer-motion";
 
 const Billing = () => (
   <section className={`${layout.sectionReverse} ${styles.paddingX}`}>
     <div className={`${layout.sectionImgReverse}`}>
-      <motion.img
-        transition={{ duration: 1 }}
-        initial={{ x: -200 }}
-        whileInView={{ x: 0 }}
+      <img
         className="w-[100%] h-[100%] relative z-[5] object-contain"
         src={bill}
         alt="billing"
@@ -17,12 +13,7 @@ const Billing = () => (
       <div className="absolute z-[3] top-0 w-[30%] h-[30%] rounded-full pink__gradient -left-1/2" />
       <div className="absolute z-[3] bottom-0 w-[50%] h-[50%] rounded-full white__gradient -left-1/2" />
     </div>
-    <motion.div
-      className={`${layout.sectionInfo}`}
-      transition={{ duration: 1 }}
-      initial={{ x: 200 }}
-      whileInView={{ x: 0 }}
-    >
+    <div className={`${layout.sectionInfo}`}>
       <h2
         className={`${styles.heading2} sm:ml-24 sm:w-1/2 text-center ss:text-start`}
       >
@@ -48,7 +39,7 @@ const Billing = () => (
           className="w-[128px] h-[42px] object-contain cursor-pointer"
         />
       </div>
-    </motion.div>
+    </div>
   </section>
 );
 

@@ -1,14 +1,10 @@
 import styles from "../style";
 import { discount, robot } from "../assets";
 import GetStarted from "./GetStarted";
-import { motion } from "framer-motion";
 
 const Banner = () => (
   <section id="home" className={`flex md:flex-row flex-col ${styles.paddingY}`}>
-    <motion.div
-      transition={{ duration: 1 }}
-      initial={{ x: -200 }}
-      whileInView={{ x: 0 }}
+    <div
       className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6`}
     >
       <div className="flex flex-row items-center py-[6px] px-4 bg-discount-gradient">
@@ -24,34 +20,21 @@ const Banner = () => (
           The Next
           <span className="text-gradient"> Generation </span>
         </h1>
-        <motion.div
-          className="ss:flex hidden md:mr-4 mr-0 "
-          transition={{ duration: 1 }}
-          initial={{ y: 200 }}
-          whileInView={{ y: 0 }}
-        >
+        <div className="ss:flex hidden md:mr-4 mr-0 ">
           <GetStarted />
-        </motion.div>
+        </div>
       </div>
       <h1 className="text-[52px] font-poppins font-semibold flex-1 ss:text-[68px] w-full text-white">
         Payment Method.
-        <motion.p
-          className={`${styles.paragraph} max-w-[470px] mt-5 mb-16`}
-          transition={{ duration: 1 }}
-          whileInView={{ x: 0 }}
-          initial={{ x: -200 }}
-        >
+        <p className={`${styles.paragraph} max-w-[470px] mt-5 mb-16`}>
           Our team of experts uses a methodology to identify the credit cards
           most likely to fit your needs. We examine annual percentage rates,
           annual fees.
-        </motion.p>
+        </p>
       </h1>
-    </motion.div>
+    </div>
     <div className={`flex-1 flex ${styles.flexCenter} relative md:my-0 my-10`}>
-      <motion.img
-        transition={{ duration: 1 }}
-        whileInView={{ x: 0 }}
-        initial={{ x: 200 }}
+      <img
         className="w-[100%] h-[100%] object-contain relative z-[5] -top-16 "
         src={robot}
         alt="billing"
